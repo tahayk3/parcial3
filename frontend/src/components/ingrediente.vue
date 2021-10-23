@@ -1,26 +1,26 @@
 <template>
-  <div>
-    <table class="table table-striped mt-4">
-      <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Descripcion</th>
-        <th scope="col">No. Personas</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr v-for="input in directory.edges" :key="input.id">
-        <td>{{ input.node.id }}</td>
-        <td>{{ input.node.name }}</td>
-        <td>{{ input.node.descripcion }}</td>
-        <td>{{ input.node.personas }}</td>
-        <td><a :href="`/ingredientes/editar/${input.node.id}/${input.node.name}`">Editar</a></td>
-      </tr>
-      </tbody>
-    </table>
-    <td><a :href="`/ingredientes/ingresar/`">Crear</a></td>
+<center>
+  <a :href="`/ingredientes/ingresar/`" class="btn btn-info">Crear</a>
+  <div class="col-sm-7">
+    <div class="card text-center" v-for="input in directory.edges" :key="input.id">
+      <div class="card-header">
+        <h1 class="card-title">{{ input.node.name }}</h1>
+      </div>
+      <div class="card-body">
+        <h5>Descripcion</h5>
+        <p class="card-text">{{ input.node.descripcion }}</p>
+      </div>
+      <div class="card-body">
+        <h5>Ingredientes</h5>
+        <p class="card-text">{{ input.node.personas }}</p>
+      </div>
+      <div class="card-footer text-muted">
+        <td type="button" class="btn btn-warning"><a :href="`/ingredientes/editar/${input.node.id}/${input.node.name}/${input.node.descripcion}/${input.node.personas}`">Editar</a></td>
+      </div>
+      <br><br><br>
+    </div>
   </div>
+</center>
 
 </template>
 

@@ -18,7 +18,7 @@ const routes = [
     component: Ingredient2
   },
   {
-    path: '/ingredientes/editar/:id/:name',
+    path: '/ingredientes/editar/:id/:name/:descripcion/:personas',
     name: 'Editar',
     component: Ingredient3
   },
