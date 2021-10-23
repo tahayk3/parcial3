@@ -8,12 +8,12 @@
     <form  action="" @submit.prevent="mounted()">
       <div class="col-sm-7">
          <div class="card-header">
-        <h3>Nombre: {{$route.params.name}}</h3>
-        <input v-model="name" name="" type="text" class="form-control">
-        <h3>Descripcion: {{$route.params.descripcion}}</h3>
-        <input v-model="descripcion" descripcion="" type="text" class="form-control">
-        <h3>Ingredientes: {{$route.params.personas}}</h3>
-        <input v-model="personas" personas="" type="text" class="form-control">
+        <h3>Nombre</h3>
+        <input v-model="name" type="text" class="form-control">
+        <h3>Descripcion</h3>
+        <input v-model="descripcion" type="text" class="form-control">
+        <h3>Ingredientes</h3>
+        <input v-model="personas" type="text" class="form-control">
         <br>
         <button type="submit" class="btn btn-warning" name="button">Ingresar</button>
         </div>
@@ -30,9 +30,9 @@
     name: 'CompanyData',
     data(){
       return {
-        name: '',
-        descripcion: '',
-        personas: '',
+        name: this.$route.params.name,
+        descripcion: this.$route.params.descripcion,
+        personas: this.$route.params.personas,
         id: '',
         directory: []
       }
@@ -67,3 +67,6 @@
   }
 }
 </script>
+
+
+
